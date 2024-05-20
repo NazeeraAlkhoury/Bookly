@@ -1,5 +1,6 @@
 import 'package:bookly/core/utils/app_assets.dart';
 import 'package:bookly/core/utils/app_dimensions.dart';
+import 'package:bookly/core/utils/app_routes.dart';
 import 'package:bookly/features/splash/presentation/views/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +22,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     super.initState();
     initSlideAnimation();
+    navigatorToHomeView();
   }
 
   @override
@@ -55,5 +57,17 @@ class _SplashViewBodyState extends State<SplashViewBody>
         Tween<Offset>(begin: const Offset(0, 50), end: const Offset(0, 0))
             .animate(slideAnimationController);
     slideAnimationController.forward();
+  }
+
+  Future navigatorToHomeView() {
+    return Future.delayed(
+      const Duration(seconds: 3),
+      () {
+        Navigator.pushReplacementNamed(
+          context,
+          AppRoutes.homeViewRoute,
+        );
+      },
+    );
   }
 }
