@@ -1,4 +1,5 @@
 import 'package:bookly/core/utils/app_colors.dart';
+import 'package:bookly/core/utils/app_routes.dart';
 import 'package:bookly/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +19,8 @@ class BooklyApp extends StatelessWidget {
         scaffoldBackgroundColor: AppColors.kPrimaryColor,
       ),
       home: const SplashView(),
+      onGenerateRoute: RouteGenerator.getRoutes,
+      initialRoute: AppRoutes.splashRoute,
     );
   }
 }
