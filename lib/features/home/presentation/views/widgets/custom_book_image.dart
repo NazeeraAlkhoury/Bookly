@@ -10,10 +10,10 @@ class CustomBookImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: AppDimensions.height(context) * .3,
-      child: AspectRatio(
-        aspectRatio: 2.7 / 4,
+    return AspectRatio(
+      aspectRatio: 2.7 / 4,
+      child: Padding(
+        padding: EdgeInsetsDirectional.only(start: AppDimensions.p15(context)),
         child: Container(
           decoration: BoxDecoration(
             color: Colors.red,
