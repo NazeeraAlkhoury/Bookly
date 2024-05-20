@@ -21,12 +21,15 @@ class CustomHomeAppBar extends StatelessWidget {
         children: [
           Image.asset(
             AppAssets.logo,
-            height: 18,
+            height: AppDimensions.h18(context),
           ),
           const Spacer(),
           IconButton(
             onPressed: () {},
-            icon: const Icon(FontAwesomeIcons.magnifyingGlass),
+            icon: Icon(
+              FontAwesomeIcons.magnifyingGlass,
+              size: AppDimensions.h20(context),
+            ),
           ),
         ],
       ),
