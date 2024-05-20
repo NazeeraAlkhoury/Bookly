@@ -16,4 +16,8 @@ class AppDimensions {
   //padding
   static double p20(context) => height(context) * 0.024;
   static double p40(context) => height(context) * 0.049;
+
+  //radius
+  static double r10(context) => height(context) * 0.012;
+  static double r12(context) => height(context) * 0.0149;
 }
