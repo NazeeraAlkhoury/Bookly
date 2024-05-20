@@ -10,6 +10,7 @@ class AppDimensions {
   //height
   static double h10(context) => height(context) * 0.012;
   static double h18(context) => height(context) * 0.022;
+  static double h20(context) => height(context) * 0.0249;
   static double h50(context) => height(context) * 0.062;
 
   //padding
