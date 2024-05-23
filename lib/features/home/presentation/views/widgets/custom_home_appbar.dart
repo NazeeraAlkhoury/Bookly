@@ -12,8 +12,8 @@ class CustomHomeAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        top: AppDimensions.p40(context),
-        bottom: AppDimensions.p20(context),
+        top: AppDimensions.p5(context),
+        bottom: AppDimensions.p10(context),
         left: AppDimensions.p20(context),
         right: AppDimensions.p20(context),
       ),

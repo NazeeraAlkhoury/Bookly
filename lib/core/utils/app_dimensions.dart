@@ -10,6 +10,7 @@ class AppDimensions {
       MediaQuery.of(context).size.width;
 
   //height
+  static double h5(context) => height(context) * 0.006;
   static double h10(context) => height(context) * 0.012;
   static double h18(context) => height(context) * 0.022;
   static double h20(context) => height(context) * 0.0249;
@@ -25,6 +26,7 @@ class AppDimensions {
   static double w30(context) => width(context) * 0.0729;
 
   //padding
+   static double p5(context) => height(context) * 0.006;
   static double p10(context) => height(context) * 0.012;
   static double p15(context) => height(context) * 0.0186;
   static double p20(context) => height(context) * 0.024;
