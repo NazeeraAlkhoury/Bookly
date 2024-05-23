@@ -16,7 +16,7 @@ class CustomTitleHomeText extends StatelessWidget {
           top: AppDimensions.p15(context),
           bottom: AppDimensions.p15(context)),
       child: const Text(
-        'Best selles',
+        'Best seller',
         style: AppStyles.textStyle18,
       ),
     );
