@@ -2,27 +2,114 @@ import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
 
 abstract class AppStyles {
-  static const textStyle18 = TextStyle(
-    fontSize: 18,
-    fontWeight: FontWeight.w600,
-  );
-  static const textStyle20 = TextStyle(
-    fontSize: 20,
-    fontWeight: FontWeight.normal,
-  );
-  static const textStyle30 = TextStyle(
-    fontSize: 30,
-    fontWeight: FontWeight.w900,
-    fontFamily: kGtSectraFine,
-    letterSpacing: 1.2,
-  );
-  static const textStyle14 = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.normal,
-  );
+  //scale factor
+  //Responsive font size
+  //fontsize(min,max)
 
-  static const textStyle16 = TextStyle(
-    fontSize: 16,
-    fontWeight: FontWeight.w500,
-  );
+  static double getResponsiveFontSize(BuildContext context,
+      {required double fontSize}) {
+    double scaleFactor = getScaleFactor(context);
+    print('scaleFactor ============================= $scaleFactor');
+    double responsiveFontSize = fontSize * scaleFactor;
+    print(
+        'responsiveFontSize ============================= $responsiveFontSize');
+    double lowerLimit = responsiveFontSize * .8;
+    print('lowerLimit ============================= $lowerLimit');
+    double upperLimit = responsiveFontSize * 1.2;
+    print('upperLimit ============================= $upperLimit');
+    print(
+        ' ============================= ${responsiveFontSize.clamp(lowerLimit, upperLimit)}');
+    return responsiveFontSize.clamp(lowerLimit, upperLimit);
+  }
+
+  static getScaleFactor(BuildContext context) {
+    double width = MediaQuery.sizeOf(context).width;
+    //late double scaleFactor;
+    if (width < 600) {
+      return width / 400;
+    } else if (width < 900 && width >= 600) {
+      return width / 700;
+    } else if (width >= 900) {
+      return width / 1000;
+    }
+
+    //return scaleFactor;
+  }
+
+  static TextStyle textStyle18(BuildContext context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(
+        context,
+        fontSize: 18,
+      ),
+      fontWeight: FontWeight.w600,
+    );
+  }
+
+//  return TextStyle(
+//     fontSize: 18,
+//     fontWeight: FontWeight.w600,
+//   );
+  static TextStyle textStyle20(BuildContext context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(
+        context,
+        fontSize: 20,
+      ),
+      fontWeight: FontWeight.normal,
+    );
+  }
+  // static const textStyle20 = TextStyle(
+  //   fontSize: 20,
+  //   fontWeight: FontWeight.normal,
+  // );
+
+  static TextStyle textStyle30(BuildContext context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(
+        context,
+        fontSize: 30,
+      ),
+      fontWeight: FontWeight.w900,
+      fontFamily: kGtSectraFine,
+      letterSpacing: 1.2,
+    );
+  }
+
+  // static const textStyle30 = TextStyle(
+  //   fontSize: 30,
+  //   fontWeight: FontWeight.w900,
+  //   fontFamily: kGtSectraFine,
+  //   letterSpacing: 1.2,
+  // );
+
+  static TextStyle textStyle14(BuildContext context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(
+        context,
+        fontSize: 14,
+      ),
+      fontWeight: FontWeight.normal,
+    );
+  }
+
+  // static const textStyle14 = TextStyle(
+  //   fontSize: 14,
+  //   fontWeight: FontWeight.normal,
+  // );
+
+  static TextStyle textStyle16(BuildContext context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(
+        context,
+        fontSize: 16,
+      ),
+      fontWeight: FontWeight.w500,
+    );
+  }
+
+  // static const textStyle16 = TextStyle(
+  //   fontSize: 16,
+  //   fontWeight: FontWeight.w500,
+  // );
 }

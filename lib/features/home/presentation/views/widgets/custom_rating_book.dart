@@ -15,7 +15,8 @@ class CustomRatingBook extends StatelessWidget {
       children: [
         Text(
           '19.99 \$',
-          style: AppStyles.textStyle20.copyWith(fontWeight: FontWeight.bold),
+          style: AppStyles.textStyle20(context)
+              .copyWith(fontWeight: FontWeight.bold),
         ),
         const Spacer(),
         Icon(
@@ -26,9 +27,9 @@ class CustomRatingBook extends StatelessWidget {
         SizedBox(
           width: AppDimensions.w7(context),
         ),
-        const Text(
+        Text(
           '4.8',
-          style: AppStyles.textStyle16,
+          style: AppStyles.textStyle16(context),
         ),
         SizedBox(
           width: AppDimensions.w5(context),
@@ -37,7 +38,7 @@ class CustomRatingBook extends StatelessWidget {
           opacity: .5,
           child: Text(
             '(255)',
-            style: AppStyles.textStyle14.copyWith(
+            style: AppStyles.textStyle14(context).copyWith(
               fontWeight: FontWeight.w600,
             ),
           ),

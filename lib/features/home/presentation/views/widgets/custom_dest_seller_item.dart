@@ -46,17 +46,19 @@ class CustomBestSellerItem extends StatelessWidget {
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
                       'Harry Potter and the goblet of fire ',
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: AppStyles.textStyle20.copyWith(
+                      style: AppStyles.textStyle20(context).copyWith(
                         fontFamily: kGtSectraFine,
                       ),
                     ),
-                    const Text('J.K , Rowling', style: AppStyles.textStyle14),
+                    Text('J.K , Rowling',
+                        style: AppStyles.textStyle14(context)),
                     const CustomRatingBook(),
                   ],
                 ),

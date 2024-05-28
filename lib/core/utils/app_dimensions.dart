@@ -15,6 +15,7 @@ class AppDimensions {
   static double h18(context) => height(context) * 0.022;
   static double h20(context) => height(context) * 0.0249;
   static double h50(context) => height(context) * 0.062;
+  static double h70(context) => height(context) * 0.087;
   static double h100(context) => height(context) * 0.124;
   static double h120(context) => height(context) * 0.149;
 
@@ -26,7 +27,7 @@ class AppDimensions {
   static double w30(context) => width(context) * 0.0729;
 
   //padding
-   static double p5(context) => height(context) * 0.006;
+  static double p5(context) => height(context) * 0.006;
   static double p10(context) => height(context) * 0.012;
   static double p15(context) => height(context) * 0.0186;
   static double p20(context) => height(context) * 0.024;
