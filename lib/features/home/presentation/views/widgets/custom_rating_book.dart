@@ -13,12 +13,6 @@ class CustomRatingBook extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(
-          '19.99 \$',
-          style: AppStyles.textStyle20(context)
-              .copyWith(fontWeight: FontWeight.bold),
-        ),
-        const Spacer(),
         Icon(
           FontAwesomeIcons.solidStar,
           size: AppDimensions.w14(context),
@@ -42,7 +36,7 @@ class CustomRatingBook extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
-        )
+        ),
       ],
     );
   }

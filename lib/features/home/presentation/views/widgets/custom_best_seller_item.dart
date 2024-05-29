@@ -46,20 +46,38 @@ class CustomBestSellerItem extends StatelessWidget {
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
-                      'Harry Potter and the goblet of fire ',
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: AppStyles.textStyle20(context).copyWith(
-                        fontFamily: kGtSectraFine,
+                    SizedBox(
+                      width: AppDimensions.width(context) * .65,
+                      child: Text(
+                        'Harry Potter and the goblet of fire ',
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: AppStyles.textStyle20(context).copyWith(
+                          fontFamily: kGtSectraFine,
+                        ),
                       ),
                     ),
-                    Text('J.K , Rowling',
-                        style: AppStyles.textStyle14(context)),
-                    const CustomRatingBook(),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        vertical: AppDimensions.h3(context),
+                      ),
+                      child: Text('J.K , Rowling',
+                          style: AppStyles.textStyle14(context)),
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          '19.99 \$',
+                          style: AppStyles.textStyle20(context)
+                              .copyWith(fontWeight: FontWeight.bold),
+                        ),
+                        const Spacer(),
+                        const CustomRatingBook(),
+                      ],
+                    ),
                   ],
                 ),
               ),

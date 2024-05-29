@@ -10,14 +10,20 @@ class AppDimensions {
       MediaQuery.of(context).size.width;
 
   //height
+  static double h3(context) => height(context) * 0.003;
   static double h5(context) => height(context) * 0.006;
   static double h10(context) => height(context) * 0.012;
   static double h18(context) => height(context) * 0.022;
   static double h20(context) => height(context) * 0.0249;
+  static double h30(context) => height(context) * 0.0373;
   static double h50(context) => height(context) * 0.062;
+  static double h60(context) => height(context) * 0.070;
   static double h70(context) => height(context) * 0.087;
   static double h100(context) => height(context) * 0.124;
   static double h120(context) => height(context) * 0.149;
+
+  static double h130(context) => height(context) * 0.1618;
+  static double h140(context) => height(context) * 0.1743;
 
   //width
   static double w5(context) => width(context) * 0.012;
@@ -25,6 +31,7 @@ class AppDimensions {
   static double w14(context) => width(context) * 0.034;
   static double w20(context) => width(context) * 0.048;
   static double w30(context) => width(context) * 0.0729;
+  static double w70(context) => width(context) * 0.0225;
 
   //padding
   static double p5(context) => height(context) * 0.006;

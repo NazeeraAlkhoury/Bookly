@@ -9,22 +9,19 @@ abstract class AppStyles {
   static double getResponsiveFontSize(BuildContext context,
       {required double fontSize}) {
     double scaleFactor = getScaleFactor(context);
-    print('scaleFactor ============================= $scaleFactor');
+
     double responsiveFontSize = fontSize * scaleFactor;
-    print(
-        'responsiveFontSize ============================= $responsiveFontSize');
+
     double lowerLimit = responsiveFontSize * .8;
-    print('lowerLimit ============================= $lowerLimit');
+
     double upperLimit = responsiveFontSize * 1.2;
-    print('upperLimit ============================= $upperLimit');
-    print(
-        ' ============================= ${responsiveFontSize.clamp(lowerLimit, upperLimit)}');
+
     return responsiveFontSize.clamp(lowerLimit, upperLimit);
   }
 
   static getScaleFactor(BuildContext context) {
     double width = MediaQuery.sizeOf(context).width;
-    //late double scaleFactor;
+
     if (width < 600) {
       return width / 400;
     } else if (width < 900 && width >= 600) {
@@ -32,8 +29,6 @@ abstract class AppStyles {
     } else if (width >= 900) {
       return width / 1000;
     }
-
-    //return scaleFactor;
   }
 
   static TextStyle textStyle18(BuildContext context) {
