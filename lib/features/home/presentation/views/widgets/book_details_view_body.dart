@@ -3,6 +3,7 @@ import 'package:bookly/features/home/presentation/views/widgets/book_details_sec
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_actions.dart';
 import 'package:bookly/features/home/presentation/views/widgets/similer_books_sections.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
@@ -13,17 +14,26 @@ class BookDetailsViewBody extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: AppDimensions.p20(context)),
-          child: const Column(
-            children: [
-              BookDetailsSection(),
-              SizedBox(
-                height: 37,
+          child: const CustomScrollView(
+            slivers: [
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Column(
+                  children: [
+                    BookDetailsSection(),
+                    SizedBox(
+                      height: 37,
+                    ),
+                    CustomBookActions(),
+                    Expanded(
+                      child: SizedBox(
+                        height: 50,
+                      ),
+                    ),
+                    SimillerBooksSection(),
+                  ],
+                ),
               ),
-              CustomBookActions(),
-              SizedBox(
-                height: 50,
-              ),
-              SimillerBooksSection(),
             ],
           ),
         ),
