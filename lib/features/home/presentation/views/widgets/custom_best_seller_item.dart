@@ -1,9 +1,11 @@
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/app_assets.dart';
 import 'package:bookly/core/utils/app_dimensions.dart';
+import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/app_styles.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_rating_book.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomBestSellerItem extends StatelessWidget {
   const CustomBestSellerItem({
@@ -19,7 +21,9 @@ class CustomBestSellerItem extends StatelessWidget {
         top: AppDimensions.p15(context),
       ),
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          GoRouter.of(context).push(AppRouter.bookDetailsViewRoute);
+        },
         child: SizedBox(
           height: AppDimensions.h120(context),
           child: Row(
