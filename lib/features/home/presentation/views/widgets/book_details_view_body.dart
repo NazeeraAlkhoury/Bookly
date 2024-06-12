@@ -1,9 +1,8 @@
 import 'package:bookly/core/utils/app_dimensions.dart';
-
 import 'package:bookly/features/home/presentation/views/widgets/book_details_section.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_actions.dart';
+import 'package:bookly/features/home/presentation/views/widgets/similer_books_sections.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
@@ -21,6 +20,10 @@ class BookDetailsViewBody extends StatelessWidget {
                 height: 37,
               ),
               CustomBookActions(),
+              SizedBox(
+                height: 50,
+              ),
+              SimillerBooksSection(),
             ],
           ),
         ),
