@@ -13,9 +13,11 @@ class AppDimensions {
   static double h3(context) => height(context) * 0.003;
   static double h5(context) => height(context) * 0.006;
   static double h10(context) => height(context) * 0.012;
+  static double h16(context) => height(context) * 0.0199;
   static double h18(context) => height(context) * 0.022;
   static double h20(context) => height(context) * 0.0249;
   static double h30(context) => height(context) * 0.0373;
+  static double h37(context) => height(context) * 0.046;
   static double h50(context) => height(context) * 0.062;
   static double h60(context) => height(context) * 0.070;
   static double h70(context) => height(context) * 0.087;

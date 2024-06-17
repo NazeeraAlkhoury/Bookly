@@ -1,3 +1,4 @@
+import 'package:bookly/core/utils/app_dimensions.dart';
 import 'package:bookly/core/utils/app_styles.dart';
 
 import 'package:flutter/material.dart';
@@ -29,7 +30,7 @@ class CustomButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: borderRadius ??
                 BorderRadius.circular(
-                  12,
+                  AppDimensions.r12(context),
                 ),
           ),
         ),

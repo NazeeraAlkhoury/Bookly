@@ -1,9 +1,9 @@
 import 'package:bookly/core/utils/app_dimensions.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_details_section.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_actions.dart';
+import 'package:bookly/features/home/presentation/views/widgets/custom_book_details_appbar.dart';
 import 'package:bookly/features/home/presentation/views/widgets/similer_books_sections.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
@@ -14,23 +14,27 @@ class BookDetailsViewBody extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: AppDimensions.p20(context)),
-          child: const CustomScrollView(
+          child: CustomScrollView(
             slivers: [
               SliverFillRemaining(
                 hasScrollBody: false,
                 child: Column(
                   children: [
-                    BookDetailsSection(),
+                    const CustomBookDetailsAppBar(),
                     SizedBox(
-                      height: 37,
+                      height: AppDimensions.h30(context),
                     ),
-                    CustomBookActions(),
+                    const BookDetailsSection(),
+                    SizedBox(
+                      height: AppDimensions.h37(context),
+                    ),
+                    const CustomBookActions(),
                     Expanded(
                       child: SizedBox(
-                        height: 50,
+                        height: AppDimensions.h50(context),
                       ),
                     ),
-                    SimillerBooksSection(),
+                    const SimillerBooksSection(),
                   ],
                 ),
               ),

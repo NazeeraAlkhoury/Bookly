@@ -1,3 +1,4 @@
+import 'package:bookly/core/utils/app_dimensions.dart';
 import 'package:bookly/core/utils/app_styles.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_similler_book_listview.dart';
 import 'package:flutter/material.dart';
@@ -18,13 +19,11 @@ class SimillerBooksSection extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
         ),
-        const SizedBox(
-          height: 16,
+        SizedBox(
+          height: AppDimensions.h16(context),
         ),
         const CustomSimillerBooksListview(),
-        const SizedBox(
-          height: 40,
-        ),
+        SizedBox(height: AppDimensions.h37(context)),
       ],
     );
   }
