@@ -1,9 +1,19 @@
 // ignore_for_file: unused_field
 
-class ApiServices{
-   final _baseUrl = 'https://www.googleapis.com/books/v1/';
-}
+import 'package:dio/dio.dart';
 
+class ApiServices {
+  final _baseUrl = 'https://www.googleapis.com/books/v1/';
+  final Dio _dio;
+  ApiServices(this._dio);
+
+  Future<Map<String, dynamic>> getData({
+    required String endPoint,
+  }) async {
+    var response = await _dio.get('$_baseUrl$endPoint');
+    return response.data;
+  }
+}
 //newest
 //'volumes?Filtering=free-ebooks&Sorting=newest &q=computer science'
 //bboks
