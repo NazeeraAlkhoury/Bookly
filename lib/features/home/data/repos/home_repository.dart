@@ -4,5 +4,5 @@ import 'package:dartz/dartz.dart';
 import '../../../../core/errors/failures.dart';
 
 abstract class HomeReopsitory {
-  Future<Either<Failures, List<BookModel>>> getBooks();
+  Future<Either<Failures, BookModel>> getBooks();
 }

@@ -11,16 +11,13 @@ class HomeRepositoryImp implements HomeReopsitory {
   HomeRepositoryImp(this._apiServices);
 
   @override
-  Future<Either<Failures, List<BookModel>>> getBooks() async {
+  Future<Either<Failures, BookModel>> getBooks() async {
     try {
-      final response = await _apiServices.getData(
+      var response = await _apiServices.getData(
           endPoint: 'volumes?Filtering=free-ebooks&q=subject:Programming');
-      List<BookModel> books = List<BookModel>.from(
-        (response as List).map(
-          (e) => BookModel.fromJson(e),
-        ),
-      );
-      return Right(books);
+      print(BookModel.fromJson(response).toString());
+
+      return Right(BookModel.fromJson(response));
     } catch (e) {
       if (e is DioException) {
         return left(ServerFailure.fromDioError(e));

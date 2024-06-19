@@ -6,8 +6,8 @@ class VolumeInfoModel extends Equatable {
   final String title;
   final List<String> authors;
   final List<String> categories;
-  final double averageRating;
-  final int ratingsCount;
+  final num? averageRating;
+  final int? ratingsCount;
   final ImageLinksModels? imageLinksModels;
   final String previewLink;
 
@@ -27,11 +27,11 @@ class VolumeInfoModel extends Equatable {
         authors: List<String>.from((json['authors'] as List).map((e) => e)),
         categories:
             List<String>.from((json['categories'] as List).map((e) => e)),
-        averageRating: json['averageRating'],
-        ratingsCount: json['ratingsCount'],
-        imageLinksModels: json['imageLinksModels'] != null
-            ? ImageLinksModels.fromJson(json['imageLinksModels'])
-            : null,
+        averageRating: json['ratingsCount'] ?? 0,
+        ratingsCount: json['ratingsCount'] ?? 0,
+        imageLinksModels: json['imageLinks'] == null
+            ? null
+            : ImageLinksModels.fromJson(json['imageLinks']),
         previewLink: json['previewLink'],
       );
 
