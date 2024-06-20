@@ -28,7 +28,8 @@ class CustomBooksListView extends StatelessWidget {
                 );
               });
         } else if (state is BooksError) {
-          return Text(state.errMessage);
+          print('======================================= ${state.errMessage}');
+          return Center(child: Text(state.errMessage));
         } else {
           return const Center(child: CircularProgressIndicator());
         }

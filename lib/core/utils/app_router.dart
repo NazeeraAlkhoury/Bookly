@@ -23,7 +23,6 @@ abstract class AppRouter {
       GoRoute(
         path: homeViewRoute,
         builder: (context, state) => BlocProvider(
-       
           create: (context) => BooksCubit(
             HomeRepositoryImp(
               ApiServices(
@@ -31,7 +30,6 @@ abstract class AppRouter {
               ),
             ),
           )..getBooks(),
-             lazy: false,
           child: const HomeView(),
         ),
       ),

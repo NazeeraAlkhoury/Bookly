@@ -13,14 +13,10 @@ class BooksCubit extends Cubit<BooksState> {
   Future getBooks() async {
     emit(BooksLoading());
     var result = await homeReopsitory.getBooks();
-    print('result ================= $result');
-    result.fold((failure) {
-      print(failure.errMessage);
-      emit(BooksError(failure.errMessage));
+    return result.fold((failure) {
+      emit(BooksError(failure.errorMessage));
     }, (books) {
-      emit(
-        BooksSuccess(books),
-      );
+      emit(BooksSuccess(books));
     });
   }
 }

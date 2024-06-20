@@ -15,18 +15,14 @@ class HomeRepositoryImp implements HomeReopsitory {
     try {
       var response = await _apiServices.getData(
           endPoint: 'volumes?Filtering=free-ebooks&q=subject:Programming');
-      print(BookModel.fromJson(response).toString());
 
       return Right(BookModel.fromJson(response));
     } catch (e) {
       if (e is DioException) {
         return left(ServerFailure.fromDioError(e));
+      } else {
+        return left(ServerFailure(e.toString()));
       }
-      return left(
-        ServerFailure(
-          errMessage: e.toString(),
-        ),
-      );
     }
   }
 }
