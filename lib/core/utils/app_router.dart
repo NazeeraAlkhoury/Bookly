@@ -1,5 +1,6 @@
 import 'package:bookly/core/services/service_locator.dart';
 import 'package:bookly/features/home/presentation/view_models/books_cubit/books_cubit.dart';
+import 'package:bookly/features/home/presentation/view_models/newest_books_cubit/newest_books_cubit.dart';
 import 'package:bookly/features/home/presentation/views/book_details_view.dart';
 
 import 'package:bookly/features/home/presentation/views/home_view.dart';
@@ -20,17 +21,26 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: homeViewRoute,
-        builder: (context, state) => BlocProvider(
-          create: (context) => getIt<BooksCubit>()..getBooks(),
-          // BooksCubit(
-          //   HomeRepositoryImp(
-          //     ApiServices(
-          //       Dio(),
-          //     ),
-          //   ),
-          // )..getBooks(),
+        builder: (context, state) => MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => getIt<BooksCubit>()..getBooks(),
+            ),
+            BlocProvider(
+              create: (context) => getIt<NewestBooksCubit>()..getNewestBooks(),
+              lazy: false,
+            )
+          ],
           child: const HomeView(),
         ),
+
+        // BooksCubit(
+        //   HomeRepositoryImp(
+        //     ApiServices(
+        //       Dio(),
+        //     ),
+        //   ),
+        // )..getBooks(),
       ),
       GoRoute(
         path: bookDetailsViewRoute,

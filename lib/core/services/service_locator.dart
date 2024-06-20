@@ -2,6 +2,7 @@ import 'package:bookly/core/services/api_services.dart';
 import 'package:bookly/features/home/data/repos/home_repository.dart';
 import 'package:bookly/features/home/data/repos/home_repository_imp.dart';
 import 'package:bookly/features/home/presentation/view_models/books_cubit/books_cubit.dart';
+import 'package:bookly/features/home/presentation/view_models/newest_books_cubit/newest_books_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
@@ -12,6 +13,7 @@ class ServiceLocator {
     //cubite
 
     getIt.registerFactory(() => BooksCubit(getIt()));
+    getIt.registerFactory(() => NewestBooksCubit(getIt()));
 
     //dio && api
     getIt.registerLazySingleton<Dio>(() => Dio(BaseOptions(
