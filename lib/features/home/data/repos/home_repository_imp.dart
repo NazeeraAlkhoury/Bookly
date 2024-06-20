@@ -25,4 +25,20 @@ class HomeRepositoryImp implements HomeReopsitory {
       }
     }
   }
+  
+  @override
+  Future<Either<Failures, BookModel>> getNewestBooks() async {
+    try {
+      var response = await _apiServices.getData(
+          endPoint: 'volumes?Filtering=free-ebooks&Sorting=newest &q=computer science');
+
+      return Right(BookModel.fromJson(response));
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      } else {
+        return left(ServerFailure(e.toString()));
+      }
+    }
+  }
 }
