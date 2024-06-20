@@ -1,6 +1,5 @@
+import 'package:bookly/features/home/data/models/book_model/image_links_models.dart';
 import 'package:equatable/equatable.dart';
-
-import 'image_links_models.dart';
 
 class VolumeInfoModel extends Equatable {
   final String title;

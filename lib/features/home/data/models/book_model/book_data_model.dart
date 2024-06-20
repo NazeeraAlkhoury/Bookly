@@ -1,4 +1,4 @@
-import 'package:bookly/features/home/data/models/book_model/volumeInfo_model.dart';
+import 'package:bookly/features/home/data/models/book_model/voluminfo_model.dart';
 import 'package:equatable/equatable.dart';
 
 class BookDataModel extends Equatable {

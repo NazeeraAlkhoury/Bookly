@@ -6,6 +6,9 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../core/widgets/custom_error.dart';
+import '../../../../../core/widgets/custom_loading.dart';
+
 class CustomBooksListView extends StatelessWidget {
   const CustomBooksListView({
     super.key,
@@ -28,10 +31,11 @@ class CustomBooksListView extends StatelessWidget {
                 );
               });
         } else if (state is BooksError) {
-          print('======================================= ${state.errMessage}');
-          return Center(child: Text(state.errMessage));
+          return CustomError(
+            errMessage: state.errMessage,
+          );
         } else {
-          return const Center(child: CircularProgressIndicator());
+          return const CustomLoading();
         }
       }),
     );
