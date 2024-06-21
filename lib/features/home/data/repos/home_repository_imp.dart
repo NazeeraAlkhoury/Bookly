@@ -32,7 +32,7 @@ class HomeRepositoryImp implements HomeReopsitory {
       var response = await _apiServices.getData(
           endPoint:
               'volumes?Filtering=free-ebooks&Sorting=newest &q=computer science');
-      print('================= $response');
+      
       return Right(BookModel.fromJson(response));
     } catch (e) {
       if (e is DioException) {

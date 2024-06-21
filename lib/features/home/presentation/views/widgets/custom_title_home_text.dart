@@ -17,7 +17,7 @@ class CustomTitleHomeText extends StatelessWidget {
         //  bottom: AppDimensions.p15(context)
       ),
       child: Text(
-        'Best seller',
+        'Newest Books',
         style: AppStyles.textStyle18(context),
       ),
     );

@@ -13,7 +13,7 @@ class CustomSimillerBooksListview extends StatelessWidget {
       height: AppDimensions.height(context) * .17,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) => CustomBookImage(
+        itemBuilder: (context, index) => const CustomBookImage(
           imageUrl: '',
         ),
       ),

@@ -1,15 +1,18 @@
 import 'package:bookly/constants.dart';
-import 'package:bookly/core/utils/app_assets.dart';
 import 'package:bookly/core/utils/app_dimensions.dart';
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/app_styles.dart';
+import 'package:bookly/features/home/data/models/book_model/book_data_model.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_rating_book.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class CustomBestSellerItem extends StatelessWidget {
-  const CustomBestSellerItem({
+class CustomNewestBooksItem extends StatelessWidget {
+  final BookDataModel bookDataModel;
+  const CustomNewestBooksItem({
     super.key,
+    required this.bookDataModel,
   });
 
   @override
@@ -30,19 +33,17 @@ class CustomBestSellerItem extends StatelessWidget {
             children: [
               AspectRatio(
                 aspectRatio: 2.9 / 4,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.red,
+                child: ClipRRect(
                     borderRadius:
-                        BorderRadius.circular(AppDimensions.r8(context)),
-                    image: const DecorationImage(
-                      image: AssetImage(
-                        AppAssets.testImage,
-                      ),
+                        BorderRadius.circular(AppDimensions.r12(context)),
+                    child: CachedNetworkImage(
+                      imageUrl: bookDataModel
+                              .volumeInfo.imageLinksModels?.thumbnail ??
+                          '',
+                      errorWidget: (context, url, error) =>
+                          const Icon(Icons.error),
                       fit: BoxFit.fill,
-                    ),
-                  ),
-                ),
+                    )),
               ),
               SizedBox(
                 width: AppDimensions.w30(context),
@@ -56,7 +57,7 @@ class CustomBestSellerItem extends StatelessWidget {
                     SizedBox(
                       width: AppDimensions.width(context) * .65,
                       child: Text(
-                        'Harry Potter and the goblet of fire ',
+                        bookDataModel.volumeInfo.title,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: AppStyles.textStyle20(context).copyWith(
@@ -68,18 +69,21 @@ class CustomBestSellerItem extends StatelessWidget {
                       padding: EdgeInsets.symmetric(
                         vertical: AppDimensions.h3(context),
                       ),
-                      child: Text('J.K , Rowling',
+                      child: Text(bookDataModel.volumeInfo.authors[0],
                           style: AppStyles.textStyle14(context)),
                     ),
                     Row(
                       children: [
                         Text(
-                          '19.99 \$',
+                          'Free',
                           style: AppStyles.textStyle20(context)
                               .copyWith(fontWeight: FontWeight.bold),
                         ),
                         const Spacer(),
-                        const CustomRatingBook(),
+                        CustomRatingBook(
+                          avarage: bookDataModel.volumeInfo.averageRating,
+                          count: bookDataModel.volumeInfo.ratingsCount,
+                        ),
                       ],
                     ),
                   ],

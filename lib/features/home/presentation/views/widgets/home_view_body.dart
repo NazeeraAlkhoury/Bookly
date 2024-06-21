@@ -1,9 +1,12 @@
 import 'package:bookly/features/home/presentation/views/widgets/custom_books_listview.dart';
-import 'package:bookly/features/home/presentation/views/widgets/custom_best_seller_item.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_home_appbar.dart';
+import 'package:bookly/features/home/presentation/views/widgets/custom_newest_books_list_view.dart';
 
 import 'package:bookly/features/home/presentation/views/widgets/custom_title_home_text.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({
@@ -12,10 +15,11 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
       child: CustomScrollView(
+        physics: BouncingScrollPhysics(),
         slivers: [
-          const SliverToBoxAdapter(
+          SliverToBoxAdapter(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -25,8 +29,11 @@ class HomeViewBody extends StatelessWidget {
               ],
             ),
           ),
-          SliverList.builder(
-            itemBuilder: (context, index) => const CustomBestSellerItem(),
+          SliverPadding(
+            padding: EdgeInsets.only(bottom: 20),
+            sliver: SliverToBoxAdapter(
+              child: CustomNewestBooksListView(),
+            ),
           ),
         ],
       ),
