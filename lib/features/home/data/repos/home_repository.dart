@@ -6,4 +6,5 @@ import '../../../../core/errors/failures.dart';
 abstract class HomeReopsitory {
   Future<Either<Failures, BookModel>> getBooks();
   Future<Either<Failures, BookModel>> getNewestBooks();
+  Future<Either<Failures, BookModel>> getSimillerBooks();
 }
