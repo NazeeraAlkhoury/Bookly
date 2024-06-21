@@ -1,12 +1,13 @@
 import 'package:bookly/core/utils/app_dimensions.dart';
+import 'package:bookly/features/home/data/models/book_model/book_data_model.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_details_section.dart';
-import 'package:bookly/features/home/presentation/views/widgets/custom_book_actions.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_details_appbar.dart';
 import 'package:bookly/features/home/presentation/views/widgets/similer_books_sections.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
+  final BookDataModel bookDataModel;
+  const BookDetailsViewBody({super.key, required this.bookDataModel});
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +25,9 @@ class BookDetailsViewBody extends StatelessWidget {
                     SizedBox(
                       height: AppDimensions.h30(context),
                     ),
-                    const BookDetailsSection(),
-                    SizedBox(
-                      height: AppDimensions.h37(context),
+                    BookDetailsSection(
+                      bookDataModel: bookDataModel,
                     ),
-                    const CustomBookActions(),
                     Expanded(
                       child: SizedBox(
                         height: AppDimensions.h50(context),

@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/widgets/custom_error.dart';
 import '../../../../../core/widgets/custom_loading.dart';
-import 'package:bookly/core/utils/app_dimensions.dart';
 
 class CustomNewestBooksListView extends StatelessWidget {
   const CustomNewestBooksListView({

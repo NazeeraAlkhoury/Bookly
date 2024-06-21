@@ -18,7 +18,7 @@ class CustomBookActions extends StatelessWidget {
             child: CustomButton(
               backgroundColor: AppColors.backgroundButtonWhiteColor,
               textColor: Colors.black,
-              text: '199.9\$',
+              text: 'Free',
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(AppDimensions.r8(context)),
                 bottomLeft: Radius.circular(AppDimensions.r8(context)),
@@ -29,7 +29,7 @@ class CustomBookActions extends StatelessWidget {
             child: CustomButton(
               backgroundColor: AppColors.backgroundButtonColor,
               textColor: Colors.white,
-              text: 'Free',
+              text: 'Preview',
               borderRadius: BorderRadius.only(
                 topRight: Radius.circular(AppDimensions.r8(context)),
                 bottomRight: Radius.circular(AppDimensions.r8(context)),

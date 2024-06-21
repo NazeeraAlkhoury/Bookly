@@ -5,7 +5,6 @@ import 'package:bookly/features/home/presentation/views/widgets/custom_newest_bo
 import 'package:bookly/features/home/presentation/views/widgets/custom_title_home_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
 class HomeViewBody extends StatelessWidget {
