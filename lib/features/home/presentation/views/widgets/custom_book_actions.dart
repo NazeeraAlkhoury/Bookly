@@ -2,7 +2,6 @@ import 'package:bookly/core/utils/app_colors.dart';
 import 'package:bookly/core/utils/app_dimensions.dart';
 import 'package:bookly/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../../core/functions/lunch_uri.dart';
 
