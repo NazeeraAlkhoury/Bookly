@@ -28,7 +28,7 @@ class BookDetailsSection extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 43,
+          height: 10,
         ),
         Text(
           bookDataModel.volumeInfo.title,
@@ -61,7 +61,9 @@ class BookDetailsSection extends StatelessWidget {
         SizedBox(
           height: AppDimensions.h37(context),
         ),
-        const CustomBookActions(),
+        CustomBookActions(
+          previewLink: bookDataModel.volumeInfo.previewLink,
+        ),
       ],
     );
   }

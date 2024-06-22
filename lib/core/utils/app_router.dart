@@ -48,7 +48,6 @@ abstract class AppRouter {
         path: bookDetailsViewRoute,
         builder: (context, state) {
           return BlocProvider(
-            lazy: false,
             create: (context) =>
                 getIt<SimillerBooksCubit>()..getSimillerBooks(),
             child: BookDetailsView(

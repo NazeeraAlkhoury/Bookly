@@ -25,11 +25,14 @@ class CustomNewestBooksListView extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
           );
         } else if (state is NewestBooksError) {
-          return CustomError(
-            errMessage: state.errMessage,
+          return SizedBox(
+            height: 200,
+            child: CustomError(
+              errMessage: state.errMessage,
+            ),
           );
         } else {
-          return const CustomLoading();
+          return const SizedBox(height: 250, child: CustomLoading());
         }
       },
     );
